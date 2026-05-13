@@ -19,7 +19,7 @@ import { ToastContainer, toast } from "react-toastify";
 import AboutPage from "./pages/AboutPage";
 import { fetchUserwishlist } from "./slices/wishListSlice";
 import ContactPage from "./pages/ContactPage";
-import WishlistPage from "../src/pages/WishlistPage/WishlistPage";
+import WishlistPage from "./pages/WishlistPage";
 import SuccessPage from "./pages/SuccessPage";
 import NotFound from "./pages/NotFound/NotFound";
 import Dashboard from "./pages/Dashboard/Dashboard";
