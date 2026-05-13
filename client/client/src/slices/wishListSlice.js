@@ -10,7 +10,7 @@ const initialState = {
 };
 
 
-axios.defaults.baseURL = process.env.REACT_APP_API_URL || "http://localhost:5000/api";
+axios.defaults.baseURL = import.meta.env.REACT_APP_API_URL || "http://localhost:5000/api";
 
 export const fetchUserwishlist = createAsyncThunk(
     "wishlist/fetchUserwishlist",

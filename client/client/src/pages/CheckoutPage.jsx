@@ -138,7 +138,7 @@ const CheckoutPage = () => {
         if (paymentMethod === "cod") {
           try {
             let { data } = await axios.post(
-              `${process.env.REACT_APP_API_URL}/order/create`,
+              `${import.meta.env.REACT_APP_API_URL}/order/create`,
               {
                 items: itemsToSend,
                 shipping: {
@@ -160,7 +160,7 @@ const CheckoutPage = () => {
           // place stripe order
           try {
             let { data } = await axios.post(
-              `${process.env.REACT_APP_API_URL}/stripe/create-checkout-session`,
+              `${import.meta.env.REACT_APP_API_URL}/stripe/create-checkout-session`,
               {
                 items: itemsToSend,
                 shipping: {
