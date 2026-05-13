@@ -33,7 +33,7 @@ app.get("/", (req, res) => {
 
 
 
-mongoose.connect("mongodb://127.0.0.1:27017/organic-store").then(() => {
+mongoose.connect(process.env.DB_URL).then(() => {
     app.listen(process.env.PORT, () => {
         console.log("Server is listening on port " + process.env.PORT + " and Connected to DB")
     })
