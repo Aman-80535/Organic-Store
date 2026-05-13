@@ -15,7 +15,13 @@ dotenv.config()
 const app = express();
 
 // http://localhost:8080/api/v1/products
-app.use(cors())
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://organic-store-shop.vercel.app/"
+  ],
+  credentials: true
+}));
 app.use("/api/v1/stripe", stripeRoutes)
 app.use(express.json())
 app.use("/api/v1/products", productRoutes)
