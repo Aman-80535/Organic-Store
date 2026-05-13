@@ -17,7 +17,7 @@ const initialState = {
 };
 
 
-axios.defaults.baseURL = "http://localhost:8080/api/v1";
+axios.defaults.baseURL = process.env.REACT_APP_API_URL || "http://localhost:5000/api";
 
 export const fetchUserCart = createAsyncThunk(
   "cart/fetchUserCart",
@@ -65,7 +65,7 @@ export const clearCart = createAsyncThunk("cart/clearCart", async ({
   token
 }) => {
   try {
-    let response = await axios.put("http://localhost:8080/api/v1/cart/clearCart", {}, {
+    let response = await axios.put(`${process.env.REACT_APP_API_URL}/cart/clearCart`, {}, {
       headers: {
         authorization: `Bearer ${token}`
       }

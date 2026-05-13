@@ -11,7 +11,7 @@ const initialState = {
     priceRange: { min: 0, max: 10000 },
 }
 
-axios.defaults.baseURL = "http://localhost:8080/api/v1"
+axios.defaults.baseURL = process.env.REACT_APP_API_URL || "http://localhost:5000/api";
 
 
 export const fetchAllProducts = createAsyncThunk("/products", async () => {
@@ -29,7 +29,7 @@ export const deleteProduct = createAsyncThunk(
     async ({ token, productId }) => {
         try {
             let { data } = await axios.delete(
-                `http://localhost:8080/api/v1/products/delete/${productId}`,
+                `${process.env.REACT_APP_API_URL}/products/delete/${productId}`,
                 {
                     headers: {
                         authorization: `Bearer ${token}`,
@@ -48,7 +48,7 @@ export const updateProduct = createAsyncThunk(
     async ({ formData, token, productId }) => {
         try {
             let { data } = await axios.put(
-                `http://localhost:8080/api/v1/products/update/${productId}`,
+                `${process.env.REACT_APP_API_URL}/products/update/${productId}`,
                 formData,
                 {
                     headers: {
@@ -68,7 +68,7 @@ export const addProduct = createAsyncThunk(
     async ({ formData, token }) => {
         try {
             let { data } = await axios.post(
-                `http://localhost:8080/api/v1/products/create`,
+                `${process.env.REACT_APP_API_URL}/products/create`,
                 formData,
                 {
                     headers: {

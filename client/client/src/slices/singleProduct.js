@@ -7,7 +7,7 @@ const initialState = {
     error: false
 }
 
-axios.defaults.baseURL = "http://localhost:8080/api/v1"
+axios.defaults.baseURL = process.env.REACT_APP_API_URL || "http://localhost:5000/api";
 
 
 export const fetchSingleProduct = createAsyncThunk("products/fetchSingleProduct", async ({ id }) => {
