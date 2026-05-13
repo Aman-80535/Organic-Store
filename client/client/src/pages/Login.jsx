@@ -50,11 +50,12 @@ const Login = () => {
 
   const validateData = (values) => {
     let errors = {};
-    if (!emailRegex.test(values.email)) {
-      errors.email = "Enter a valid email address";
-    } else if (!passwordRegex.test(values.password)) {
-      errors.password = "Enter a valid Password";
-    }
+    // if (!emailRegex.test(values.email)) {
+    //   errors.email = "Enter a valid email address";
+    // } 
+    // else if (!passwordRegex.test(values.password)) {
+    //   errors.password = "Enter a valid Password";
+    // }
     return errors;
   };
 

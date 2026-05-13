@@ -10,9 +10,9 @@ const UnderMaintainence = () => {
         <section>
             <div className='notfound__container'>
                 <h2>Sorry!</h2>
-                <h3>This Feature is under Maintainenece</h3>
+                <h3>This Feature is under Maintenance</h3>
                 <p>
-                    The page you are looking for is under Maintainence. Please Come back after some time. But you can click the button below to go back to the
+                    The page you are looking for is under Maintenance. Please Come back after some time. But you can click the button below to go back to the
                     homepage.
                 </p>
 

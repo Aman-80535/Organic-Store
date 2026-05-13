@@ -56,9 +56,11 @@ const Register = () => {
       errors.username = "Username is required";
     } else if (!emailRegex.test(values.email)) {
       errors.email = "Enter a valid email address";
-    } else if (!passwordRegex.test(values.password)) {
-      errors.password = "Enter a valid Password";
-    } else if (values.password !== values.cpassword) {
+    } 
+    // else if (!passwordRegex.test(values.password)) {
+    //   errors.password = "Enter a valid Password";
+    // } 
+    else if (values.password !== values.cpassword) {
       errors.cpassword = "Confirm Password and Password must be the same";
     }
     return errors;
