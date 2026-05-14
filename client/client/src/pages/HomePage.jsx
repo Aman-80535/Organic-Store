@@ -110,11 +110,12 @@ const RecommendationCard = ({ content }) => {
         >
           {content.desc}
         </Typography>
-
-        <CustomButton
-          text="Shop Now"
-          icon={<FaArrowRight style={{ color: "white" }} />}
-        />
+        <Link to={"/everything"} style={{ textDecoration: "none", alignSelf: "flex-start" }}>
+          <CustomButton
+            text="Shop Now"
+            icon={<FaArrowRight style={{ color: "white" }} />}
+          />
+        </Link>
       </Box>
 
       {/* Image */}
@@ -140,6 +141,7 @@ const RecommendationCard = ({ content }) => {
 };
 
 const FeatureCard = ({ icon, mainText, text }) => {
+
   return (
     <Box
       display={"flex"}
@@ -176,7 +178,7 @@ const HomePage = () => {
       {/* Banner Ends here */}
 
       {/* Features section starts here */}
-      <Box padding={"80px"} bgcolor={"#111111"} sx={{display: {  md: "flex", gap: "25px", flexDirection: "column" }}} >
+      <Box padding={"80px"} bgcolor={"#111111"} sx={{ display: { md: "flex", gap: "25px", flexDirection: "column" } }} >
         {/* card */}
         <FeatureCard
           mainText={"Free Shipping*"}
@@ -213,7 +215,7 @@ const HomePage = () => {
         />
       </Box>
 
-    {/* Features section ends here */}
+      {/* Features section ends here */}
 
       {/* Product Section start here */}
       <Box bgcolor={"#fff"} p={"140px 0 50px"}>
@@ -229,38 +231,38 @@ const HomePage = () => {
             </Typography>
             <img src={vertorleaf} alt="Leaf" />
           </Box>
-     <Box
-  sx={{
-    py: {
-      xs: "40px",
-      sm: "50px",
-      md: "70px",
-    },
-  }}
->
-  <Box
-    sx={{
-      display: "grid",
+          <Box
+            sx={{
+              py: {
+                xs: "40px",
+                sm: "50px",
+                md: "70px",
+              },
+            }}
+          >
+            <Box
+              sx={{
+                display: "grid",
 
-      gridTemplateColumns: {
-        xs: "1fr",
-        sm: "repeat(2, 1fr)",
-        md: "repeat(3, 1fr)",
-        lg: "repeat(4, 1fr)",
-      },
+                gridTemplateColumns: {
+                  xs: "1fr",
+                  sm: "repeat(2, 1fr)",
+                  md: "repeat(3, 1fr)",
+                  lg: "repeat(4, 1fr)",
+                },
 
-      gap: {
-        xs: "16px",
-        sm: "20px",
-        md: "24px",
-      },
-    }}
-  >
-    {products?.slice(0, 4).map((product) => (
-      <ProductCard key={product._id} product={product} />
-    ))}
-  </Box>
-</Box>
+                gap: {
+                  xs: "16px",
+                  sm: "20px",
+                  md: "24px",
+                },
+              }}
+            >
+              {products?.slice(0, 4).map((product) => (
+                <ProductCard key={product._id} product={product} />
+              ))}
+            </Box>
+          </Box>
         </Box>
       </Box>
 
@@ -279,30 +281,32 @@ const HomePage = () => {
           bgcolor: "#f8f6f3",
         }}
       >
-      <Box
-  sx={{
-    maxWidth: "1200px",
-    mx: "auto",
-    px: { xs: 2, sm: 3, md: 0 },
+        <Box
+          sx={{
+            maxWidth: "1200px",
+            mx: "auto",
+            px: { xs: 2, sm: 3, md: 0 },
 
-    display: "grid",
-    gridTemplateColumns: {
-      xs: "1fr",
-      sm: "repeat(2, 1fr)",
-      lg: "repeat(3, 1fr)",
-    },
+            display: "grid",
+            gridTemplateColumns: {
+              xs: "1fr",
+              sm: "repeat(2, 1fr)",
+              lg: "repeat(3, 1fr)",
+            },
 
-    gap: {
-      xs: "20px",
-      sm: "24px",
-      md: "30px",
-    },
-  }}
->
-  {recommendationSection.map((content) => (
-    <RecommendationCard key={content.id} content={content} />
-  ))}
-</Box>
+            gap: {
+              xs: "20px",
+              sm: "24px",
+              md: "30px",
+            },
+          }}
+        >
+          {recommendationSection.map((content) => (
+            <div key={content.id} >
+              <RecommendationCard content={content} />
+            </div>
+          ))}
+        </Box>
       </Box>
       {/* Recommendation section ends here */}
 
